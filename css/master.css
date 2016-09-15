@@ -1,0 +1,118 @@
+*{
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+	margin: 0;
+	color: lightgrey;
+}
+body{
+  background-image: url("../images/back6.jpg");
+  background-position: center;
+  background-size: cover;
+}
+header, nav{
+  display: inline-block;
+}
+#navbar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(26, 26, 26);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 2px lightgrey solid;
+  font-family: "Square";
+  font-weight: 300;
+}
+#navbar ul{
+  padding: 0;
+}
+#navbar li{
+  display: inline;
+  font-size: 0.8em;
+  padding-right: 25px;
+}
+#navbar h1{
+  display: inline;
+  padding-left: 20px;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+#navbar a{
+  color: lightgrey;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+#navbar a::before{
+  content: ">";
+  padding-right: 5px;
+}
+nav{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+}
+#content{
+  height: 100%;
+}
+.viewer{
+  width: 50%;
+  height: 50%;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  border: solid 1px lightgrey;
+}
+/*
+███████  ██████  ███    ██ ████████
+██      ██    ██ ████   ██    ██
+█████   ██    ██ ██ ██  ██    ██
+██      ██    ██ ██  ██ ██    ██
+██       ██████  ██   ████    ██
+*/
+
+@font-face {
+    font-family: Inversionz;
+    src: url("../fonts/Inversionz.otf");
+}
+@font-face {
+    font-family: Inversionz;
+    src: url("../fonts/Inversionz.otf");
+}
+@font-face {
+    font-family: Everson;
+    src: url("../fonts/EMLATIN6.ttf");
+}
+@font-face {
+    font-family: Square;
+    font-weight: 300;
+    src: url("../fonts/FORCED SQUARE.ttf");
+}
+/*
+ █████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██ ███████
+██   ██ ████   ██ ██ ████  ████ ██   ██    ██    ██ ██    ██ ████   ██ ██
+███████ ██ ██  ██ ██ ██ ████ ██ ███████    ██    ██ ██    ██ ██ ██  ██ ███████
+██   ██ ██  ██ ██ ██ ██  ██  ██ ██   ██    ██    ██ ██    ██ ██  ██ ██      ██
+██   ██ ██   ████ ██ ██      ██ ██   ██    ██    ██  ██████  ██   ████ ███████
+*/
+
+a {
+display: inline-block;
+padding-top: 2px;
+}
+a:after {
+content: '';
+display: block;
+height: 1px;
+width: 0;
+background: transparent;
+transition: width .5s ease, background-color .5s ease;
+
+}
+a:hover:after {
+width: 100%;
+background: lightgrey;
+}
