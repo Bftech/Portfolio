@@ -7,9 +7,27 @@ html, body {
 	color: lightgrey;
 }
 body{
+  font-family: "Square";
+  font-weight: 300;
+}
+#page_background{
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("../images/back6.jpg");
   background-position: center;
   background-size: cover;
+  transition: filter 0.5s ease;
+}
+.blurred{
+  filter: blur(5px);
+  -moz-filter:blur(5px);
+  -webkit-filter:blur(5px);
+  -o-filter:blur(5px);
+  -ms-filter:blur(5px);
 }
 header, nav{
   display: inline-block;
@@ -22,8 +40,6 @@ header, nav{
   background-color: rgb(26, 26, 26);
   background-color: rgba(0, 0, 0, 0.8);
   border-top: 2px lightgrey solid;
-  font-family: "Square";
-  font-weight: 300;
 }
 #navbar ul{
   padding: 0;
@@ -40,14 +56,20 @@ header, nav{
   font-weight: 300;
   letter-spacing: 6px;
 }
-#navbar a{
+a{
   color: lightgrey;
   letter-spacing: 3px;
   text-decoration: none;
+  padding-left: 5px;
 }
-#navbar a::before{
+a::before{
   content: ">";
-  padding-right: 5px;
+  display: inline-block;
+  transition: transform .5s ease;
+  transform-origin: 30% 60%;
+}
+a:hover::before{
+  transform: rotate(-90deg);
 }
 nav{
   position: relative;
@@ -59,12 +81,28 @@ nav{
   height: 100%;
 }
 .viewer{
-  width: 50%;
-  height: 50%;
-  position: relative;
-  top: 25%;
-  left: 25%;
-  border: solid 1px lightgrey;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+}
+.viewer_element{
+  margin: 4vw;
+}
+.viewer_element a{
+  margin: 0.5em;
+}
+.viewer_element img{
+  max-width: 15vw;
+  max-height: 15vh;
+  border: 0.5px solid lightgrey;
+}
+.hidden{
+  opacity: 0;
+  display: none;
 }
 /*
 ███████  ██████  ███    ██ ████████
