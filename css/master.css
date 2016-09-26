@@ -127,6 +127,12 @@ nav{
   background-color: rgba(0, 0, 0, 0.5);
   /*width: 100%;*/
 }
+.viewer_element p{
+  display: inline;
+  font-size: 0.9em;
+  color: lightgrey;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .folded{
   height: 3%;
 }
