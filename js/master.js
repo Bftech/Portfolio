@@ -1,5 +1,6 @@
-$("#navbar a").click(function () {
-  $("#page_background").toggleClass("blurred",true);
-  $(".viewer").toggleClass("hidden",true);
-  $("#"+this.innerHTML.toLowerCase()+"_viewer").toggleClass("hidden",false);
+
+$(".viewer_element a").click(function () {
+  $(this).toggleClass("hovered");
+  $(".viewer_element").toggleClass("folded");
+  $(this).parent().toggleClass("unfolded");
 })
