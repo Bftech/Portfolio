@@ -1,9 +1,13 @@
 #!/usr/bin/python
 
-import sys,os
+# TODO: Add .viewer_link
+
+import sys,os,os.path
+import configparser
 
 # print(sys.argv)
 genDir = sys.argv[1]
+config = configparser.ConfigParser()
 
 ############# Files exploration ###########
 
@@ -20,27 +24,33 @@ print("Found",len(dirList), "dirs :",dirList)
 
 ############## HTML output init #######
 
-genFile = open(genDir+'.html', 'w')
+htmlFile = open(genDir+'.html', 'w')
+cssFile = open(genDir+'.css', 'w')
 print("######")
 print(genDir+'.html created')
-genFile.write('<div id="'+genDir.split("_")[1].lower()+'_viewer" class="viewer hidden">'+"\n")
+print(genDir+'.css created')
+htmlFile.write('<div id="'+genDir.split("_")[1].lower()+'_viewer" class="viewer">'+"\n")
 
 ############## Main Parsing Loop #############
 
 for currentFolder in dirList:
     print("###")
     print("Parsing",currentFolder,"...")
-    fileList = os.listdir(genDir+"\\"+currentFolder)
-    print("Found",len(fileList), "files :",fileList)
-    for f in fileList:
-        # ext = os.path.splitext(f)[1]
-        if (f == "01.jpg") or (f == "01.png"):
-            genFile.write('<div class="viewer_element">'+"\n")
-            genFile.write('<img src="'+genDir+'/'+currentFolder+'/'+f+'"/>'+"\n")
-            genFile.write('<br>'+"\n")
-            genFile.write('<a href="#">'+currentFolder.split("_")[1]+'</a>'+"\n")
-            genFile.write('</div>'+"\n")
+    # fileList = os.listdir(genDir+"\\"+currentFolder)
+    config.read(genDir+"/"+currentFolder+"/config.ini")
 
-genFile.write('</div>'+"\n")
+    # HTML
+    htmlFile.write('<div id="'+currentFolder.split("_")[1]+'_viewer" class="viewer_element">'+"\n")
+    htmlFile.write('<a href="#">'+currentFolder.split("_")[1]+'</a>')
+    htmlFile.write('<p>['+config["infos"]["tags"]+']</p>'+"\n")
+    htmlFile.write('</div>'+"\n")
+    print("HTML parsed")
+    # CSS
+    cssFile.write('#'+currentFolder.split("_")[1]+'_viewer {'+"\n")
+    cssFile.write('background-image: url("'+genDir+'/'+currentFolder+'/01.jpg");'+"\n")
+    cssFile.write('}'+"\n")
+    print("CSS parsed")
 
-genFile.close()
+htmlFile.write('</div>'+"\n")
+htmlFile.close()
+cssFile.close()

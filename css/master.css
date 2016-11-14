@@ -56,6 +56,19 @@ header, nav{
 #navbar.show{
   height: 50%;
 }
+#navbar #about{
+  display: none;
+}
+#navbar #about *{
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+#navbar.show #about{
+  display: block;
+}
+#navbar.show #about *{
+  opacity: 1;
+}
 #navbar ul{
   padding: 0;
 }

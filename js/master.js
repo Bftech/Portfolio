@@ -1,6 +1,6 @@
 var lastA = "";
 
-$(".viewer_element a").click(function () {
+$(".viewer_element > a").click(function () {
   if ($(this).parent().attr("id") == lastA) {
     $(this).toggleClass("hovered");
     $(".viewer_element").not($(this).parent()).toggleClass("folded");
@@ -9,7 +9,7 @@ $(".viewer_element a").click(function () {
   } else {
     $(".viewer_element").removeClass("unfolded");
     $(".viewer_element").addClass("folded");
-    $(".viewer_element a").removeClass("hovered");
+    $(".viewer_element > a").removeClass("hovered");
     $(this).parent().removeClass("folded");
     $(this).parent().addClass("unfolded");
     $(this).addClass("hovered");
