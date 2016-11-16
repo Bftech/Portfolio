@@ -1,6 +1,8 @@
 var lastA = "";
 
 $(".viewer_element > a").click(function () {
+  $("#navbar").removeClass("show");
+  $("#navbar a").removeClass("hovered");
   if ($(this).parent().attr("id") == lastA) {
     $(this).toggleClass("hovered");
     $(".viewer_element").not($(this).parent()).toggleClass("folded");
@@ -20,4 +22,5 @@ $(".viewer_element > a").click(function () {
 
 $("#navbar a").click(function() {
   $("#navbar").toggleClass("show");
+  $(this).toggleClass("hovered");
 });

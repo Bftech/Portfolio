@@ -43,6 +43,7 @@ for currentFolder in dirList:
     htmlFile.write('<div id="'+currentFolder.split("_")[1]+'_viewer" class="viewer_element">'+"\n")
     htmlFile.write('<a href="#">'+currentFolder.split("_")[1]+'</a>')
     htmlFile.write('<p>['+config["infos"]["tags"]+']</p>'+"\n")
+    if config["infos"]["linkname"] != "#": htmlFile.write('<aside>[Galerie :<a target="_blank" href="'+config["infos"]["linkurl"]+'">'+config["infos"]["linkname"]+'</a> ]</aside>')
     htmlFile.write('</div>'+"\n")
     print("HTML parsed")
     # CSS
