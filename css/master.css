@@ -70,8 +70,16 @@ header{
 #about section{
   width: 30%;
 }
+#about h2{
+  font-size: 1.3em;
+}
 #about p{
   text-align: justify;
+  font-family: 'robotoregular';
+  font-size: 0.8em;
+}
+#about i{
+  width: 15px;
 }
 #about *{
   transition: all 1.5s ease;
@@ -214,6 +222,19 @@ nav{
     font-weight: 300;
     src: url("../fonts/FORCED SQUARE.ttf");
 }
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/Roboto-Regular-webfont.eot');
+    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 /*
  █████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██ ███████
 ██   ██ ████   ██ ██ ████  ████ ██   ██    ██    ██ ██    ██ ████   ██ ██

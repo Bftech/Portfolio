@@ -20,7 +20,7 @@ $(".viewer_element > a").click(function () {
   lastA = $(this).parent().attr("id");
 });
 
-$("#navbar a").click(function() {
+$("#navbar a").first().click(function() {
   $("#navbar").toggleClass("show");
   $(this).toggleClass("hovered");
 });
